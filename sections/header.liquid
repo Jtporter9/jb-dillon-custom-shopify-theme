@@ -48,7 +48,7 @@
       {% endif %}
 
         <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
-        <a class="announcement-bar-close-icon" href=""><img src="{{ 'x-icon.png' | asset_url }}" /></a>
+        <a class="announcement-bar-close-icon" href=""><img src="{{ 'x-icon.svg' | asset_url }}" /></a>
 
       {% if section.settings.message_link == blank %}
         </div>
@@ -152,7 +152,7 @@
 
           <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
             <!-- {% include 'icon-cart' %} -->
-            <img src="{{ 'cart-icon.svg' | asset_url }}" />
+            <img style="position: relative; top: 2px;" src="{{ 'cart-icon.svg' | asset_url }}" />
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
             <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %}" data-cart-count-bubble>
               <span data-cart-count>{{ cart.item_count }}</span>
