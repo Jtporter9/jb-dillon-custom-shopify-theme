@@ -1,3 +1,166 @@
-body {
-  background-color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    font-family: 'Archivo', sans-serif;
+}
+
+/* COLORS */
+/* 
+4 Functional #333333
+3 Functional #767676
+2 Functional #C9C9C9
+1 Functional #EDEDED
+5 Sand #775E41
+4 Sand #B79B7B
+3 Sand #DBCDBD
+2 Sand #FFEAD1
+1 Sand #FFF3E6
+5 Rock #6D2E1D
+4 Rock #B14B2F
+3 Rock #D27156
+2 Rock #ECD9D4
+1 Rock #F6ECEA
+5 Stone #41444E
+4 Stone #686E7E
+3 Stone #989DAA
+2 Stone #C7CAD1
+1 Stone #E0E2E6
+5 Sun #B2821A
+4 Sun #E0A527
+3 Sun #EECD87
+2 Sun #F5E3BC
+1 Sun #FBF4E4 
+*/
+
+/* NAV */
+.site-nav {
+    margin: 14px 0;
+}
+
+.site-header__logo {
+    margin: 5px 0;
+}
+
+.right-nav-link {
+    padding: 3px 10px;
+}
+
+.site-nav__link--active .site-nav__label {
+    border-bottom: 4px solid #B14B2F;
+}
+
+.site-nav__label {
+    border-bottom: 4px solid transparent;
+    padding-bottom: 6px;
+}
+.site-nav__label:hover {
+    border-bottom: 4px solid #E0A527;
+}
+.site-nav__link:focus .site-nav__label, .site-nav__link:not([disabled]):hover .site-nav__label {
+    border-bottom-color: #B14B2F;
+}
+
+.site-nav__label {
+    text-transform: uppercase;
+}
+
+.secondary-nav-link {
+    color: #767676;
+    font-size: 14px;
+}
+
+/* ANNOUNCMENT BAR */
+.announcement-bar {
+    background-color: #B14B2F !important;
+}
+
+.announcement-bar__message {
+    font-weight: normal;
+    padding: 8px 22px;
+    margin: 0px;
+}
+
+.announcement-bar-close-icon {
+    position: absolute;
+    top: 13px;
+    right: 10px;
 }
