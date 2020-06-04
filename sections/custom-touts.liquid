@@ -1,0 +1,52 @@
+<div class="page-width custom-section custom-tout-section">
+    <div class="grid grid--uniform grid--flush-bottom">
+        <div class="grid__item medium-up--one-third text-center">
+            <div class="custom-tout-icon-container">
+                <img src="{{ 'icon_delivery.svg' | asset_url }}" alt="delivery icon">
+            </div>
+            <h3 class="h3">Free Shipping</h3>
+            <div class="rte-setting">
+                <a href="/">LEARN MORE</a>
+            </div>
+        </div>
+
+        <div class="grid__item medium-up--one-third text-center">
+            <div class="custom-tout-icon-container">
+                <img src="{{ 'icon_returns.svg' | asset_url }}" alt="returns icon">
+            </div>
+            <h3 class="h3">Free Returns</h3>
+            <div class="rte-setting">
+                <a href="/">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="grid__item medium-up--one-third text-center">
+            <div class="custom-tout-icon-container">
+                <img src="{{ 'icon_exchanges.svg' | asset_url }}" alt="exchanges icon">
+            </div>
+            <h3 class="h3">Free Exchanges</h3>
+            <div class="rte-setting">
+                <a href="/">LEARN MORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Custom Touts",
+"settings": [
+],
+"presets": [
+{
+"name": "Custom Touts",
+"category": "Custom"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,70 @@
+<div class="custom-content-block">
+    <div style="background: url({{ 'union-top-dark.svg' | asset_url }}) center;" class="cool-border"></div>
+    <div class="custom-content-block-container">
+        <div class="custom-content-block-split">
+            <div class="custom-oversized-image-container">
+                <img class="big-boot-img" src="{{ 'big-boot.jpg' | asset_url }}" alt="">
+            </div>
+            <div class="custom-background-image-mobile-big-boot" style="background-image: url('{{ 'big-boot.jpg' | asset_url }}');"></div>
+        </div>
+        <div class="custom-content-block-split"custom-content-block-split>
+            <p class="custom-content-block-title">{{ section.settings.title }}</p>
+            <h2 class="custom-content-block-heading">{{  section.settings.heading }}</h2>
+            <div class="custom-content-block-description">{{ section.settings.description }}</div>
+            <a href="{{ section.settings.button-url }}">
+                <button class="custom-btn">{{ section.settings.button-text }}</button>
+            </a>
+        </div>
+    </div>
+    <div style="background: url({{ 'union-bottom-dark.svg' | asset_url }}) center;" class="cool-border"></div>
+</div>
+
+{% schema %}
+    {
+        "name": "Custom Content Block",
+        "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Title"
+        },
+        {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Heading"
+        },
+        {
+            "id": "description",
+            "type": "richtext",
+            "label": "Description",
+            "default": "<p>This is the description.</p>"
+        },
+        {
+            "id": "button-url",
+            "type": "text",
+            "label": "Button URL",
+            "default": "/"
+        },
+        {
+            "id": "button-text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Call to Action"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Content Block",
+            "category": "Custom"
+        }
+    ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

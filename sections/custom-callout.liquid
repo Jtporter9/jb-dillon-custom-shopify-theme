@@ -1,0 +1,51 @@
+<div class="custom-section custom-callout">
+    <h2 class="custom-callout-heading">{{  section.settings.heading }}</h2>
+    <div class="custom-callout-description">{{ section.settings.description }}</div>
+    <a href="{{ section.settings.button-url }}">
+        <button class="custom-btn">{{ section.settings.button-text }}</button>
+    </a>
+</div>
+
+{% schema %}
+    {
+        "name": "Custom Callout",
+        "settings": [
+        {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Title"
+        },
+        {
+            "id": "description",
+            "type": "richtext",
+            "label": "Description",
+            "default": "<p>This is the description.</p>"
+        },
+        {
+            "id": "button-url",
+            "type": "text",
+            "label": "Button URL",
+            "default": "/"
+        },
+        {
+            "id": "button-text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Call to Action"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Callout",
+            "category": "Custom"
+        }
+    ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

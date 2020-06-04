@@ -1,0 +1,45 @@
+<div id="shopify-section-hero-1" class="shopify-section index-section index-section--flush">
+    <div data-section-id="hero-1" data-section-type="hero-section">
+        <div class="hero hero--large hero-hero-1 hero__overlay box ratio-container js lazyloaded" id="Hero-hero-1"
+            data-layout="full_width">
+            <div class="placeholder-background custom-placeholder-background"
+                style="background: url('{{ 'hero_img.jpg' | asset_url }}');">
+            </div>
+            <div class="custom-hero-overlay"></div>
+            <div class="hero__inner">
+                <div class="page-width text-center">
+                    <div>
+                        <img class="hero-logo" src="{{ 'white-logo.svg' | asset_url }}" alt="">
+                    </div>
+                    <h2 class="h1 mega-title mega-title--large">Hand Made Calfskin Boots</h2>
+                    <div class="rte-setting mega-subtitle mega-subtitle--large">
+                        <p class="hero-description">Only the best boot made by real people in the “location” Mexico</p>
+                    </div><a href="/collections" class="btn hero__btn custom-btn"
+                        aria-label="Shop All Calfskin Boots">Shop All
+                        Calfskin Boots</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Custom Hero",
+"settings": [
+
+],
+"presets": [
+{
+"name": "Custom Hero",
+"category": "Custom"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

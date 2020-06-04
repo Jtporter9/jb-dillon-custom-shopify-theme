@@ -66,8 +66,13 @@
       {% else %}
         {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
       {% endif %}
-
-      <div class="grid__item {{ logo_classes }}">
+      
+      <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open custom-hamburger-left" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+        <!-- {% include 'icon-hamburger' %} -->
+        <img src="{{ 'hamburger.svg' | asset_url }}" class="icon icon-hamburger custom-hamburger" />
+        {% include 'icon-close' %}
+      </button>
+      <div class="grid__item {{ logo_classes }} custom-header-logo">
         {% comment %}
           Use the uploaded logo from theme settings if enabled.
           Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -130,19 +135,19 @@
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button> -->
 
-          <a href="/faq" class="site-header__icon site-header__account">
+          <a href="/faq" class="site-header__icon site-header__account custom-header-link">
             <span class="secondary-nav-link">Help</span>
           </a>
 
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <a href="{{ routes.account_url }}" class="site-header__icon site-header__account">
+              <a href="{{ routes.account_url }}" class="site-header__icon site-header__account custom-header-link">
                 <!-- {% include 'icon-login' %} -->
                 <span class="secondary-nav-link">{{ 'layout.customer.account' | t }}</span>
                 <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
               </a>
             {% else %}
-              <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account">
+              <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account custom-header-link">
                 <!-- {% include 'icon-login' %} -->
                 <span class="secondary-nav-link">Login</span>
                 <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
@@ -150,7 +155,7 @@
             {% endif %}
           {% endif %}
 
-          <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
+          <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart custom-cart-icon-link">
             <!-- {% include 'icon-cart' %} -->
             <img style="position: relative; top: 2px;" src="{{ 'cart-icon.svg' | asset_url }}" />
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
@@ -161,7 +166,7 @@
           </a>
 
           {% unless linklists[section.settings.main_linklist] == blank %}
-            <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+            <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open custom-hamburger-right" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
               {% include 'icon-hamburger' %}
               {% include 'icon-close' %}
             </button>
@@ -263,6 +268,31 @@
             {% endif %}
           </li>
         {% endfor %}
+        <li class="mobile-nav__item border-bottom">
+          <a href="/faq" class="mobile-nav__link custom-mobile-hamburger-link">
+            <span class="secondary-nav-link">Help</span>
+          </a>
+        </li>
+    
+        {% if shop.customer_accounts_enabled %}
+        {% if customer %}
+        <li class="mobile-nav__item border-bottom">
+          <a href="{{ routes.account_url }}" class="mobile-nav__link custom-mobile-hamburger-link">
+            <!-- {% include 'icon-login' %} -->
+            <span class="secondary-nav-link">{{ 'layout.customer.account' | t }}</span>
+            <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
+          </a>
+        </li>
+        {% else %}
+        <li class="mobile-nav__item border-bottom">
+          <a href="{{ routes.account_login_url }}" class="mobile-nav__link custom-mobile-hamburger-link">
+            <!-- {% include 'icon-login' %} -->
+            <span class="secondary-nav-link">Login</span>
+            <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
+          </a>
+        </li>
+        {% endif %}
+        {% endif %}
       </ul>
     </nav>
   </header>

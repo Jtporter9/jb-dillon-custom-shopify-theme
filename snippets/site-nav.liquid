@@ -79,7 +79,7 @@
         </div>
       </li>
     {% else %}
-      <li {% if link.active %} class="site-nav--active"{% endif %}>
+      <li {% if link.active %} class="custom-nav-link-style-active custom-nav-link-style"{% else %}  class="custom-nav-link-style" {% endif %}>
         <a href="{{ link.url }}"
           class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
           {% if link.current %} aria-current="page"{% endif %}
