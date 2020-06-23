@@ -128,6 +128,10 @@
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
           </div>
 
+          <div class="product-single__description rte">
+            {{ product.description }}
+          </div>
+
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
             <div class="product__policies rte" data-product-policies>
               {%- if shop.taxes_included -%}
@@ -245,8 +249,8 @@
           aria-hidden="true"
         >{{ 'products.product.loader_label' | t }}</p>
 
-        <div class="product-single__description rte">
-          {{ product.description }}
+        <div class="product-policy-statement">
+          <img src="{{ 'truck-icon.svg' | asset_url }}" alt="returns icon"><span>Free shipping, Returns, And Exchanges</span>
         </div>
 
         {% if section.settings.show_share_buttons %}

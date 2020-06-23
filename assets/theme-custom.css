@@ -509,6 +509,20 @@ footer input {
     opacity: 0.5;
 }
 
+.collection-grid-item {
+    border: 2px solid transparent;
+}
+
+.collection-grid-item:hover {
+    /* rock/dark */
+    border: 2px solid #B14B2F;
+}
+
+.collection-grid-item__title {
+    text-transform: uppercase;
+}
+
+
 /* CUSTOM TOUTS */
 .custom-tout-section a {
     text-decoration: underline;
@@ -747,3 +761,407 @@ footer input {
     }
 }
 
+/* COLLECTIONS PAGE */
+
+.collection-hero__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: 0.1em !important;
+}
+
+#Collection .product-card {
+    border: 1px solid #C9C9C9;
+    min-height: 400px;
+    background: #EDEDED;
+}
+
+#Collection .product-card .grid-view-item__image-wrapper {
+    margin: 0;
+    position: static;
+    max-width: none;
+}
+
+#Collection .product-card .grid-view-item__image-wrapper .grid-view-item__image {
+    max-width: none;
+}
+
+#Collection .product-desctiption {
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.collection-hero {
+    margin-bottom: 0px;
+}
+
+#Collection .product-card__title {
+    font-size: 20px;
+    color: #41444E;
+}
+
+#Collection .price__regular .price-item {
+    color: #B14B2F;
+    letter-spacing: 0.1em;
+}
+.select-group select, .select-group .disclosure__toggle {
+    outline: none;
+}
+@media only screen and (max-width: 500px) {
+    .small--one-half {
+        width: 100%;
+    }
+}
+
+.price__badge {
+    padding: 0.5rem 1rem !important;
+    font-size: 14px !important;
+    border-radius: 4px;
+}
+
+/* PRODUCT PAGE */
+
+.return-link-wrapper {
+    margin-top: 0;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.product-single__title {
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 40px;
+    color: #41444E;
+}
+
+.product-form {
+    padding-top: 0;
+}
+
+.product-policy-statement {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.product-policy-statement span {
+    padding: 0 1rem;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333333;
+}
+
+/* ABOUT US */
+
+.about-us-jump-to-link-container {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.about-us-jump-to-link-container a {
+    text-transform: uppercase;
+    padding: 18px 3rem;
+    letter-spacing: 0.1em;
+    outline: none;
+}
+
+.about-us-jump-to-link-active {
+    border-bottom: 2px solid #333333;
+    padding-bottom: 16px;
+}
+ 
+.about-us-jump-to-link-container a:hover {
+    border-bottom: 2px solid #333333;
+    padding-bottom: 18px;
+}
+
+.about-us .hero {
+    margin-bottom: 0;
+}
+
+.about-us .index-section {
+    padding-bottom: 0;
+}
+
+.about-us-video {
+    margin: 4rem 0;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0rem;
+}
+
+.about-us .full-width-centered {
+    background-color: rgba(20 ,20 ,20 ,0.3);
+    height: 100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us .hero--large {
+    height: 400px;
+}
+
+.about-us-section-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    color: #333333;
+    text-transform: none;
+}
+
+.out-boots-headline-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.about-us-touts-section {
+    width: 100%;
+    background: #EDEDED;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 0;
+}
+
+.about-us-touts-section .tout-box {
+    background: #C4C4C4;
+    padding: 6rem;
+}
+
+.our-boots-headline-half {
+    width: 50%;
+    padding: 1rem;
+}
+
+.our-boots-headline-image {
+    height: 400px;
+    background-size: cover !important;
+}
+
+#our-boots-mobile,
+#our-people-mobile,
+#our-story-mobile {
+    display: none;
+}
+
+.about-us-section-title {
+    margin-top: 5rem;
+}
+
+@media only screen and (max-width: 750px) {
+    #our-boots-mobile,
+    #our-people-mobile,
+    #our-story-mobile {
+        display: block;
+    }
+
+    #our-boots,
+    #our-people,
+    #our-story {
+        display: none;
+    }
+
+    .about-us-jump-to-link-container a {
+        padding: 10px 1rem;
+    }
+    .about-us-jump-to-link-container a:hover,
+    .about-us-jump-to-link-active {
+        padding-bottom: 8px !important;
+    }
+
+    .about-us .mega-title {
+        font-size: 32px;
+        letter-spacing: 0.1em !important;
+    }
+
+    .out-boots-headline-container {
+        flex-direction: column-reverse;
+    }
+
+    .our-boots-headline-half {
+        width: 100%;
+    }
+
+    .about-us-touts-section {
+        display: block;
+    }
+
+    .about-us-touts-section .tout-box {
+        margin: 1rem;
+    }
+
+    .about-us-video {
+        height: auto;
+    }
+}
+
+/* HELP PAGE */
+
+.returns-policies-section {
+    margin-top: 5rem;
+    text-align: center;
+    color: #333333;
+}
+
+.returns-policies-section h2 {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 72px;
+}
+
+.returns-policies-section .returns-policies-description {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 2rem 10rem;
+}
+
+.returns-policies-touts {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    padding: 3rem 5rem;
+}
+
+.returns-policies-tout {
+    padding: 1rem;
+}
+
+.returns-policies-tout h3 {
+    font-size: 34px;
+    margin: 0;
+}
+
+.returns-policies-tout p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.returns-policies-header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.returns-policies-header-container img {
+    margin-right: 1rem;
+}
+
+.how-to-exchange-boots-section {
+    background: #EDEDED;
+    padding: 7rem 5rem;
+}
+
+.description-container {
+    display: flex;
+    justify-content: center;
+}
+
+.description-container p {
+    max-width: 700px;
+    padding: 2rem 0;
+}
+
+.boot-fit-guide-touts-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 5rem;
+}
+
+.boot-fit-guide-touts-section .tout-container {
+    width: 100%;
+    margin: 0 0.5rem;
+    text-align: left;
+}
+
+.boot-fit-guide-touts-section .tout-box {
+    background: #C4C4C4;
+    padding: 8rem 0rem;
+    margin: 1rem 0;
+}
+
+#boot-fit-guide-section .how-to-exchange-boots-section {
+    margin-top: 3rem;
+}
+
+#boot-fit-guide-section .how-to-exchange-boots-section h3 {
+    margin-bottom: 2rem;
+    font-size: 34px;
+}
+
+.collapisbles-section {
+    margin: 3rem 0;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.custom-collapsible {
+    background-color: white;
+    color: #333333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-top: 1px solid #C9C9C9;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-collapsible:last-of-type {
+    border-bottom: 1px solid #C9C9C9;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active-collapsible, .custom-collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .collapsible-content {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    padding: 2rem 0;
+    text-align: left;
+  }
+
+
+#returns-policies-mobile,
+#boot-fit-guide-mobile,
+#product-care-mobile,
+#faq-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    #returns-policies-mobile,
+    #boot-fit-guide-mobile,
+    #product-care-mobile,
+    #faq-mobile {
+        display: block;
+    }
+
+    #returns-policies,
+    #boot-fit-guide,
+    #our-story,
+    #faq {
+        display: none;
+    }
+}
