@@ -770,8 +770,8 @@ footer input {
 }
 
 #Collection .product-card {
-    border: 1px solid #C9C9C9;
-    min-height: 400px;
+    border: 1px solid #C9C9C9; 
+    min-height: 450px;
     background: #EDEDED;
 }
 
@@ -1115,7 +1115,7 @@ footer input {
     border: none;
     outline: none;
     transition: 0.4s;
-    border-top: 1px solid #C9C9C9;
+    border-bottom: 1px solid #C9C9C9;
     font-weight: bold;
     font-size: 20px;
     display: flex;
@@ -1123,8 +1123,8 @@ footer input {
     align-items: center;
   }
 
-  .custom-collapsible:last-of-type {
-    border-bottom: 1px solid #C9C9C9;
+  .collapisbles-section div:first-of-type {
+    border-top: 1px solid #C9C9C9;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -1140,6 +1140,27 @@ footer input {
     overflow: hidden;
     padding: 2rem 0;
     text-align: left;
+  }
+
+  .faq-section .faq-heading-section h2 {
+    font-size: 60px;
+  }
+
+  .faq-section .faq-heading-section {
+      padding: 5rem 0;
+  }
+
+  #faq-section {
+      text-align: center;
+  }
+
+  .sticky-nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 99999999;
+    background: #fff;
   }
 
 
@@ -1160,8 +1181,226 @@ footer input {
 
     #returns-policies,
     #boot-fit-guide,
-    #our-story,
+    #product-care,
     #faq {
         display: none;
+    }
+
+    .returns-policies-section h2 {
+        font-size: 48px;
+    }
+
+    .returns-policies-section .returns-policies-description {
+        padding: 1rem 0rem;
+    }
+
+    .returns-policies-touts {
+        display: block;
+        padding: 2rem 1rem;
+    }
+
+    .how-to-exchange-boots-section {
+        padding: 4rem 1rem;
+    }
+
+    .how-to-exchange-boots-section h3 {
+        font-size: 34px;
+    }
+
+    .description-container p {
+        font-size: 16px;
+    }
+
+    #boot-fit-guide-section {
+        padding: 0 1rem;
+    }
+    
+    #boot-fit-guide-section h2 {
+        font-size: 48px;
+    }
+
+    .boot-fit-guide-touts-section {
+        display: block;
+        padding: 3rem 0rem;
+    }
+
+    .boot-fit-guide-touts-section .tout-container {
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .boot-fit-guide-touts-section .tout-box {
+        margin-bottom: 2rem;
+    }
+
+    .boot-fit-guide-touts-section .tout-container h3 {
+        font-size: 34px;
+    }
+    
+    .boot-fit-guide-touts-section .tout-container p {
+        font-size: 16px;
+    }
+
+    #boot-fit-guide-section .how-to-exchange-boots-section {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    #product-care-section {
+        padding: 0 1rem;
+    }
+    
+    #product-care-section h2 {
+        font-size: 48px;
+    }
+
+    .boot-fit-guide-touts-section {
+        padding: 1rem 0;
+    }
+
+    #faq-section h2 {
+        font-size: 48px;
+    }
+
+    .faq-section .faq-heading-section {
+        padding: 3rem 0;
+    }
+
+    .collapisbles-section {
+        margin: 2rem 0;
+    }
+
+    .collapsible-content p {
+        font-size: 16px;
+    }
+}
+
+/* FLOATING CART */
+.cart-popup-wrapper {
+    z-index: 99999999999;
+}
+
+.floating-cart-btn {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 8px;
+    letter-spacing: 0.24em;
+}
+
+.cart-popup-header-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.cart-popup-header-container h2 {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+
+.cart-popup-header-container p {
+    font-size: 10px;
+}
+
+.cart-popup {
+    background: #FFFFFF;
+    box-shadow: -4px 0px 16px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.cart-popup__header {
+    border-bottom: none;
+    padding: 10px;
+}
+
+.cart-popup-item {
+    border-bottom: 2px solid #e5e5e5;
+    padding: 1rem 0;
+}
+
+.popup-cart-button-container {
+    padding: 1rem;
+    margin-top: 4rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    box-shadow: 0px -4px 16px rgba(0, 0, 0, 0.15);
+}
+
+html, body {
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+
+.opaque-background {
+    height: 100%;
+    width: 100%;
+    background: rgba(51 ,51 ,51 ,0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999999999;
+    transform: none;
+    overflow:hidden;
+}
+
+.cart-popup__close {
+    outline: none;
+}
+
+.announcement-bar__message {
+    color: white;
+}
+
+.cart-popup-item__description {
+    display: block;
+}
+
+.cart-popup-item__image-wrapper {
+    flex-basis: auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.cart-popup-wrapper {
+    padding: 0 1rem;
+}
+
+.cart-popup-price-container {
+    display: flex;
+}
+
+.flex-end {
+    align-self: flex-end;
+}
+
+.custom-remove-link {
+    font-size: 10px;
+    line-height: 16px;
+    text-align: right;
+    color: #B14B2F;
+}
+
+.custom-remove-link:hover {
+    color: #B14B2F !important;
+    border-bottom: 1px solid #B14B2F;
+}
+
+.cart-popup__header {
+    position: relative;
+    left: 15px;
+}
+
+@media only screen and (max-width: 750px) {
+    .cart-popup-wrapper {
+        height: 100vh;
+    }
+    
+    .popup-cart-button-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }

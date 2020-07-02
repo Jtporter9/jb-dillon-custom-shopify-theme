@@ -115,6 +115,7 @@
 
   {%- if settings.enable_ajax -%}
     {% include 'cart-popup' %}
+    {% include 'custom-cart-popup' %}
   {%- endif -%}
 
   {% section 'header' %}
@@ -138,5 +139,6 @@
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
+  {% render 'ajaxify-cart' %}
 </body>
 </html>

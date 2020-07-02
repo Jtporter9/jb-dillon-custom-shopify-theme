@@ -1,0 +1,120 @@
+<div id="opaqueBackground" class="opaque-background hide"></div>
+<div id="cartPopup" class="cart-popup-wrapper cart-popup-wrapper--hidden" role="dialog" aria-modal="true"
+    aria-labelledby="CartPopupHeading" data-cart-popup-wrapper>
+    <div data-section-id="{{ section.id }}" data-section-type="cart-template"
+        data-ajax-enabled="{{ section.settings.cart_ajax_enable }}">
+
+        <div data-cart-wrapper>
+            <div class="cart-header">
+                <!-- <h2 id="CartPopupHeading" class="cart-popup__heading">{{ 'cart.general.title' | t }} ({{ cart.items.size }})</h2>
+                <a href="{{ routes.all_products_collection_url }}" class="text-link text-link--accent">
+                    {{ 'cart.general.continue_shopping' | t }}
+                </a> -->
+                <div class="cart-popup__header">
+                    <div class="cart-popup-header-container">
+                        <h2 id="CartPopupHeading" class="cart-popup__heading">{{ 'cart.general.title' | t }}
+                            ({{ cart.items.size }})</h2>
+                        <p>Free Shipping, Returns & Exchanges</p>
+                    </div>
+                    <button id="closePopupCustom" class="cart-popup__close"
+                        aria-label="{{ 'general.accessibility.close_modal' | t }}"
+                        data-cart-popup-close>{% include 'icon-close' %}</button>
+                </div>
+            </div>
+
+            <form action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+                <div data-cart-line-items>
+                    {% if cart.item_count == 0 %}
+                    <p style="text-align: center;">Your cart is empty</p>
+                    {%- endif -%}
+
+                    {% if cart.item_count != 0 %}
+                    {%- for item in cart.items -%}
+                    <div class="cart-popup-item" data-cart-item data-cart-item-key="{{ item.key }}"
+                        data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}"
+                        data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
+                        <div class="cart-popup-item__image-wrapper">
+                            <img class="cart-popup-item__image{% if item.image == null %} hide{% endif %}"
+                                src="{{ item | img_url: 'x190' }}" alt="{{ item.image.alt | escape }}"
+                                data-cart-item-image>
+                        </div>
+                        <div class="cart-popup-item__description">
+                            <div class="cart-popup-item__title">
+                                <a href="{{ item.url }}" class="cart__product-title" data-cart-item-title>
+                                    {{ item.product.title }}
+                                </a>
+                            </div>
+
+                            {%- assign variant_options = 'template ' | split: ' ' -%}
+                            {%- if item.product.has_only_default_variant != true -%}
+                            {%- assign variant_options = item.options_with_values -%}
+                            {%- endif -%}
+                            {%- assign property_size = item.properties | size -%}
+
+                            <ul class="product-details{% if item.product.has_only_default_variant and property_size == 0 %} hide{% endif %}"
+                                data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
+                                {%- for option in variant_options -%}
+                                <li class="product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}"
+                                    data-cart-item-option>{{ option.name }}: {{ option.value }}</li>
+                                {%- endfor -%}
+
+                                {%- assign properties = 'template ' | split: ' ' -%}
+                                {%- if property_size > 0 -%}
+                                {%- assign properties = item.properties -%}
+                                {%- endif -%}
+
+                                {%- for p in properties -%}
+                                {%- unless p.last == blank -%}
+                                <li class="product-details__item product-details__item--property{%if property_size == 0%} hide{% endif %}"
+                                    data-cart-item-property>
+                                    <span class="product-details__item-label"
+                                        data-cart-item-property-name>{{ p.first }}: </span>
+
+                                    {%- comment -%}
+                                    Check if there was an uploaded file associated
+                                    {%- endcomment -%}
+                                    <span data-cart-item-property-value>
+                                        {%- if p.last contains '/uploads/' -%}
+                                        <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                                        {%- else -%}
+                                        {{ p.last }}
+                                        {%- endif -%}
+                                    </span>
+                                </li>
+                                {%- endunless -%}
+                                {%- endfor -%}
+                                <li class="product-details__item product-details__item--variant-option"
+                                    data-cart-item-option="">Quantity: {{ item.quantity }}</li>
+                            </ul>
+
+                            <p class="cart__remove">
+                                <a href="/cart" class="text-link text-link--accent"
+                                    aria-label="{{ 'cart.label.remove' | t: product: item.title }}"
+                                    data-cart-remove>Edit</a>
+                            </p>
+                        </div>
+
+                        <div class="cart-popup-price-container">
+                            <div class="flex-end">
+                                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+                                    class="text-link custom-remove-link"
+                                    aria-label="{{ 'cart.label.remove' | t: product: item.title }}"
+                                    data-cart-remove>{{ 'cart.general.remove' | t }}</a>
+                                <p>{{ item.price | money }}</p>
+                            </div>
+                        </div>
+
+                        <!-- END OF CART POPUP ITEM -->
+                    </div>
+                    {%- endfor -%}
+                    {%- endif -%}
+                </div>
+                
+                <div class="popup-cart-button-container">
+                    <input type="submit" class="btn custom-btn floating-cart-btn" value="CHECKOUT">
+                    <input id="continueShopping" class="cart-popup__cta-link btn btn--secondary-accent floating-cart-btn" value="{{ 'cart.general.continue_shopping' | t }}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
