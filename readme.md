@@ -6,4 +6,4 @@ $ theme watch
 `
 
 https://j-b-dillon.myshopify.com/
-p:jbdillon
+enter site using password:jbdillon
